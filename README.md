@@ -7,6 +7,13 @@ site **off Wix**. All content and images are local; nothing loads from the old W
 Built as plain HTML + [Tailwind CSS](https://tailwindcss.com) (via CDN), with a small brand
 stylesheet and a touch of vanilla JavaScript. No build step, no framework, no server required.
 
+## Two versions in this repo
+
+- **Repo root** — the **clean rebuild** (this README). A modern, editable, self-owned site that
+  reproduces the original's content and look. This is the version to deploy and change going forward.
+- **[`v1/`](v1/)** — an **exact frozen replica** of the original Wix site, captured as static
+  HTML/CSS/JS with all assets local. Kept for reference. See [`v1/README.md`](v1/README.md).
+
 ## Pages
 
 | File | Page |
