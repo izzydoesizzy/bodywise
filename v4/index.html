@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bodywise | Gender-Expansive Fertility Awareness Education</title>
+  <meta name="description" content="Bodywise offers gender-expansive Fertility Awareness Method (FAM) education and sexual & reproductive health support for all people with menstrual cycles. Learn to avoid or achieve pregnancy naturally, and understand your body. With Laura, HRHP & Fertility Awareness Educator.">
+  <meta property="og:title" content="Bodywise | Gender-Expansive Fertility Awareness Education">
+  <meta property="og:description" content="Find the wisdom in every cycle, enjoy vitality in every phase of life. Fertility awareness education and reproductive-health support with Laura.">
+  <meta property="og:image" content="images/laura-hero.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400..600&family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { plum:'#3a2130', berry:'#d10a6b', orange:'#e2913f', cream:'#fbf6ef', blush:'#f8e7ef', sand:'#f4ecdd', ink:'#43323b', muted:'#766470', green:'#7fa05a' },
+      fontFamily: { display:['Poppins','sans-serif'], body:['"Nunito Sans"','sans-serif'], accent:['Fraunces','serif'] },
+      maxWidth: { content:'1180px' }
+    }}}
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-body">
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="max-w-content mx-auto px-5 flex items-center justify-between h-20">
+      <a href="index.html" class="shrink-0" aria-label="Bodywise home"><img src="images/logo.jpg" alt="Bodywise" class="h-9 w-auto"></a>
+      <nav class="hidden lg:flex items-center gap-7">
+        <a href="what-is-fam.html" class="nav-link">What is Fertility Awareness?</a>
+        <div class="nav-dd">
+          <button class="nav-link inline-flex items-center gap-1" aria-haspopup="true" aria-expanded="false">Work With Me
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dd-panel">
+            <a class="nav-dd-item" href="fa-for-avoiding-pregnancy.html">FA for Avoiding Pregnancy</a>
+            <a class="nav-dd-item" href="fa-for-achieving-pregnancy.html">FA for Achieving Pregnancy</a>
+            <a class="nav-dd-item" href="counselling.html">Counselling &amp; Practical Support</a>
+            <a class="nav-dd-item" href="workshops-trainings.html">Workshops &amp; Trainings</a>
+            <a class="nav-dd-item" href="about-working-with-me.html">About Working With Me</a>
+          </div>
+        </div>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <!-- TODO: point "Book a Call" at Laura's scheduler (Calendly/Acuity). Falls back to contact page for now. -->
+        <a href="contact.html" class="btn btn-primary">Book a Call</a>
+      </nav>
+      <button id="menuToggle" class="lg:hidden text-plum p-2" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <!-- mobile menu -->
+    <div id="mobileMenu" class="lg:hidden bg-cream border-t border-[#ecdfe6]">
+      <div class="px-5 py-4 flex flex-col gap-1">
+        <a href="what-is-fam.html" class="nav-link py-2">What is Fertility Awareness?</a>
+        <button id="mobileWorkToggle" class="nav-link py-2 flex items-center justify-between w-full">Work With Me
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div id="mobileWorkMenu" class="hidden pl-4 flex flex-col gap-1 border-l border-[#ecdfe6] ml-1">
+          <a href="fa-for-avoiding-pregnancy.html" class="nav-link py-1.5">FA for Avoiding Pregnancy</a>
+          <a href="fa-for-achieving-pregnancy.html" class="nav-link py-1.5">FA for Achieving Pregnancy</a>
+          <a href="counselling.html" class="nav-link py-1.5">Counselling &amp; Practical Support</a>
+          <a href="workshops-trainings.html" class="nav-link py-1.5">Workshops &amp; Trainings</a>
+          <a href="about-working-with-me.html" class="nav-link py-1.5">About Working With Me</a>
+        </div>
+        <a href="contact.html" class="nav-link py-2">Contact</a>
+        <a href="contact.html" class="btn btn-primary mt-2">Book a Call</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="relative overflow-hidden bg-cream">
+      <div class="max-w-content mx-auto px-5 pt-16 pb-14 md:pt-24 md:pb-20 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="eyebrow">Gender-Expansive Education</p>
+          <h1 class="mt-4 text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.08] font-display font-bold">
+            Fertility Awareness Education for all people with menstrual cycles
+          </h1>
+          <p class="mt-6 text-xl md:text-2xl font-accent text-berry">Find the wisdom in every cycle, enjoy vitality in every phase of life.</p>
+          <p class="mt-6 text-lg text-muted max-w-md">Learn to read your body, avoid or achieve pregnancy on your terms, and understand your menstrual health, with warm, trauma-informed, one-on-one support.</p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="what-is-fam.html" class="btn btn-primary">What is Fertility Awareness?</a>
+            <a href="#work-with-me" class="btn btn-outline">Work With Me</a>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="absolute -top-6 -right-4 w-40 h-40 rounded-full bg-blush -z-0"></div>
+          <div class="absolute -bottom-6 -left-6 w-24 h-24 rounded-full bg-orange/30 -z-0"></div>
+          <img src="images/laura-hero.jpg" alt="Laura, Fertility Awareness Educator, smiling in a warm home studio" class="relative img-round shadow-xl w-full max-w-md mx-auto">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== INTRO / STORY ===== -->
+    <section class="bg-white">
+      <div class="max-w-content mx-auto px-5 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1 relative">
+          <img src="images/laura-2.jpg" alt="Laura standing in a sunlit room" class="img-round shadow-lg w-full max-w-sm mx-auto">
+        </div>
+        <div class="order-1 md:order-2 prose-bw">
+          <p class="eyebrow">Hi! I'm Laura</p>
+          <h2 class="mt-3 text-3xl md:text-4xl font-display font-semibold">I'm here for you, every step of the way</h2>
+          <p class="mt-5">I know it's hard to figure out how to best take care of your sexual health, so I am here for you every step of the way.</p>
+          <p><strong>Are you having side effects from birth control that you don't like? Do you have irregular periods, or wild pre-menstrual symptoms? Is your fertility a mystery to you?</strong></p>
+          <p>I've been there. I have felt clueless and unsupported, not knowing my own body, and frustrated by the lack of options.</p>
+          <p>Then I found fertility awareness. Practicing the Fertility Awareness Method (FAM) has given me a deep understanding of my menstrual cycle, and the knowledge to support whole-body health. It is incredibly empowering. It's also the right of every person to know how their body works.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BENEFITS ===== -->
+    <section class="bg-sand">
+      <div class="max-w-content mx-auto px-5 py-16 md:py-20">
+        <div class="max-w-3xl">
+          <p>Learning how to do this was not difficult, and it only took a few cycles. As I gained confidence and charted consistently, I got much more than I bargained for.</p>
+          <h3 class="mt-6 text-2xl font-display font-semibold text-plum">It has helped me to:</h3>
+        </div>
+        <div class="check-grid mt-8 max-w-4xl">
+          <div class="check-item"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#d10a6b" stroke-width="1.5"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#d10a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><p>Feel more connected to myself as I healed from trauma.</p></div>
+          <div class="check-item"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#d10a6b" stroke-width="1.5"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#d10a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><p>See the impact of allergies on my body.</p></div>
+          <div class="check-item"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#d10a6b" stroke-width="1.5"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#d10a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><p>Avoid pregnancy effectively.</p></div>
+          <div class="check-item"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#d10a6b" stroke-width="1.5"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#d10a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><p>Monitor the impact of using Plan B, getting vaccinations, and using different medications on my body.</p></div>
+          <div class="check-item"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#d10a6b" stroke-width="1.5"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#d10a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><p>Achieve pregnancy when I was ready.</p></div>
+          <div class="check-item"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#d10a6b" stroke-width="1.5"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#d10a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><p>Track the return of fertility as I breastfed, and continue avoiding pregnancy in the postpartum period.</p></div>
+          <div class="check-item"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#d10a6b" stroke-width="1.5"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#d10a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><p>Understand the cyclical nature of my mood, and much more!</p></div>
+        </div>
+        <blockquote class="pullquote">
+          <span class="dots" aria-hidden="true"><span style="background:#e2913f"></span><span style="background:#d10a6b"></span><span style="background:#e2913f"></span></span>
+          I have been practicing FAM since 2014, and it has been nothing short of transformative.
+        </blockquote>
+        <div class="max-w-3xl mx-auto text-center prose-bw">
+          <p>I now feel much more empowered, confident, and at home in my own body. Importantly, it also allowed me to get off hormonal birth control, stop experiencing the negative impacts it was having on my mental health, and stop contributing to the harmful environmental impacts it can have.</p>
+          <p><strong>Since I learned this for myself, it has been my passion to support others to gain this knowledge too.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CREDENTIALS ===== -->
+    <section class="bg-white">
+      <div class="max-w-content mx-auto px-5 py-16 md:py-20 grid md:grid-cols-2 gap-12">
+        <div class="prose-bw">
+          <p class="eyebrow">Experience &amp; Training</p>
+          <h2 class="mt-3 text-3xl font-display font-semibold">A decade of reproductive-health work</h2>
+          <p class="mt-5">In the past 12 years, I've worked as a counsellor and manager with many leading Toronto organizations in sexual and reproductive health, abortion care, crisis counselling, and gender-based violence.</p>
+          <p>I also trained with <strong>Justisse College</strong> as a Holistic Reproductive Health Practitioner (HRHP) and Fertility Awareness Educator.</p>
+          <div class="grid grid-cols-3 gap-3 mt-7">
+            <div class="stat-chip bg-blush border-0"><span class="big">12+</span><span class="small">years in reproductive health</span></div>
+            <div class="stat-chip bg-blush border-0"><span class="big">2014</span><span class="small">practicing FAM since</span></div>
+            <div class="stat-chip bg-blush border-0"><span class="big">HRHP</span><span class="small">Justisse-trained educator</span></div>
+          </div>
+        </div>
+        <div>
+          <p class="text-lg text-ink">My expertise is in supporting people with every aspect of sexual and reproductive health, using a feminist, trauma-informed, and anti-oppressive framework. This includes:</p>
+          <ul class="pill-list mt-6">
+            <li>STIs &amp; blood-borne infections</li>
+            <li>Birth control methods</li>
+            <li>Pregnancy options counselling</li>
+            <li>Abortion care access</li>
+            <li>Crisis counselling &amp; intervention</li>
+            <li>Healing from sexualized &amp; gender-based violence</li>
+            <li>Fertility awareness</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== INCLUSIVITY ===== -->
+    <section class="bg-plum text-cream">
+      <div class="max-w-content mx-auto px-5 py-16 md:py-20 text-center max-w-3xl">
+        <div class="dot-cycle justify-center mb-6"><span style="background:#e2913f"></span><span style="background:#d10a6b"></span><span style="background:#e2913f"></span><span style="background:#d10a6b"></span></div>
+        <p class="text-xl md:text-2xl font-accent text-cream leading-relaxed">"Everyone deserves the opportunity to learn more about their body, and it is my life's work to support people who are ready to get to know themselves more."</p>
+        <p class="mt-8 text-cream/80 text-lg">My goal is to provide support that is unburdened by gender binaries. Everyone who is values-aligned is welcome to work with me, including non-binary people, genderqueer folks, the 2SLGBTQ+ community, and allied cis women.</p>
+        <p class="mt-4 text-cream font-display font-medium text-lg">If you have a menstrual cycle, you can learn to practice fertility awareness too.</p>
+      </div>
+    </section>
+
+    <!-- ===== FIT LIST ===== -->
+    <section class="bg-cream">
+      <div class="max-w-content mx-auto px-5 py-16 md:py-20">
+        <h2 class="text-3xl font-display font-semibold text-center">Working with me is for you if...</h2>
+        <div class="check-grid mt-10 max-w-4xl mx-auto">
+          <div class="check-item"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#d10a6b" stroke-width="1.5"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#d10a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><p><strong>You need an allied educator.</strong> You are sick of gender discourse in the menstrual health space.</p></div>
+          <div class="check-item"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#d10a6b" stroke-width="1.5"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#d10a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><p><strong>You're ready to stop the pill,</strong> or other hormonal birth control that isn't working for you, and learn another effective option.</p></div>
+          <div class="check-item"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#d10a6b" stroke-width="1.5"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#d10a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><p><strong>You're hormone-free right now.</strong> You are not currently taking gender-affirming hormone therapy, or hormonal birth control.</p></div>
+          <div class="check-item"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#d10a6b" stroke-width="1.5"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#d10a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><p><strong>You want to conceive</strong> in the near future and prep your body for a healthy pregnancy.</p></div>
+          <div class="check-item"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#d10a6b" stroke-width="1.5"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#d10a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><p><strong>You have fertility concerns</strong> and want to investigate what is going on, before paying for expensive fertility treatments.</p></div>
+          <div class="check-item"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#d10a6b" stroke-width="1.5"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#d10a6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><p><strong>You're willing to learn a new skill.</strong> It requires patience!</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section id="work-with-me" class="bg-white">
+      <div class="max-w-content mx-auto px-5 py-16 md:py-24">
+        <div class="text-center max-w-2xl mx-auto">
+          <p class="eyebrow">Ways to work together</p>
+          <h2 class="mt-3 text-3xl md:text-4xl font-display font-semibold">Let's work together!</h2>
+        </div>
+        <div class="mt-12 grid md:grid-cols-3 gap-7">
+          <a href="fa-for-avoiding-pregnancy.html" class="card overflow-hidden group">
+            <div class="h-44 overflow-hidden"><img src="images/succulent.jpg" alt="Green succulent plant" class="img-cover group-hover:scale-105 transition duration-500"></div>
+            <div class="p-7">
+              <h3 class="text-xl font-display font-semibold text-plum">FAM for birth control</h3>
+              <p class="mt-3 text-muted">Learn the only environmentally-friendly method of fertility management, effective, with no side effects, gimmicks, or devices.</p>
+              <span class="mt-5 inline-flex items-center gap-1 font-display font-semibold text-berry">Learn more →</span>
+            </div>
+          </a>
+          <a href="fa-for-achieving-pregnancy.html" class="card overflow-hidden group">
+            <div class="h-44 overflow-hidden"><img src="images/cherry-tree.jpg" alt="Cherry tree in blossom" class="img-cover group-hover:scale-105 transition duration-500"></div>
+            <div class="p-7">
+              <h3 class="text-xl font-display font-semibold text-plum">FAM for pregnancy</h3>
+              <p class="mt-3 text-muted">Know when you're fertile, assess your menstrual health, and prepare your body before resorting to expensive treatments.</p>
+              <span class="mt-5 inline-flex items-center gap-1 font-display font-semibold text-berry">Learn more →</span>
+            </div>
+          </a>
+          <a href="counselling.html" class="card overflow-hidden group">
+            <div class="h-44 overflow-hidden"><img src="images/counselling-couch.jpg" alt="Comfortable counselling space" class="img-cover group-hover:scale-105 transition duration-500"></div>
+            <div class="p-7">
+              <h3 class="text-xl font-display font-semibold text-plum">1:1 Support</h3>
+              <p class="mt-3 text-muted">Non-judgemental sexual and reproductive health counselling and practical support, from someone in your corner.</p>
+              <span class="mt-5 inline-flex items-center gap-1 font-display font-semibold text-berry">Learn more →</span>
+            </div>
+          </a>
+        </div>
+        <div class="text-center mt-12">
+          <a href="about-working-with-me.html" class="btn btn-plum">About working with me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TRUST / PARTNERS ===== -->
+    <section class="bg-blush">
+      <div class="max-w-content mx-auto px-5 py-14">
+        <p class="text-center eyebrow">Where I've worked &amp; trained</p>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
+          <img src="images/partner-ppt.png" alt="Planned Parenthood Toronto" class="h-14 w-auto object-contain">
+          <img src="images/partner-cihc.jpeg" alt="CIHC" class="h-14 w-auto object-contain">
+          <img src="images/partner-iwhc.jpg" alt="Immigrant Women's Health Centre" class="h-14 w-auto object-contain">
+          <img src="images/partner-trcc.jpeg" alt="Toronto Rape Crisis Centre" class="h-14 w-auto object-contain">
+          <img src="images/partner-ac.jpg" alt="Action Canada for Sexual Health and Rights" class="h-12 w-auto object-contain">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== NEWSLETTER ===== -->
+  <section class="bg-sand">
+    <div class="max-w-content mx-auto px-5 py-16 text-center">
+      <div class="dot-cycle justify-center mb-4"><span style="background:#e2913f"></span><span style="background:#d10a6b"></span><span style="background:#e2913f"></span><span style="background:#d10a6b"></span></div>
+      <h2 class="text-2xl md:text-3xl font-display font-semibold">Stay in touch!</h2>
+      <p class="mt-3 text-muted max-w-xl mx-auto">Enter your email below for occasional updates, or <a href="contact.html" class="text-berry underline">get in touch</a> with questions.</p>
+      <!-- TODO: replace REPLACE_ME with Laura's Formspree form ID -->
+      <form action="https://formspree.io/f/REPLACE_ME" method="POST" class="mt-6 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input type="email" name="email" required placeholder="Enter your email here" class="field" aria-label="Email address">
+        <button type="submit" class="btn btn-primary whitespace-nowrap">Sign Up</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-plum text-cream/90">
+    <div class="max-w-content mx-auto px-5 py-16 grid gap-10 md:grid-cols-[1.5fr_1fr_auto]">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="dot-cycle"><span style="background:#e2913f"></span><span style="background:#d10a6b"></span><span style="background:#e2913f"></span></span>
+          <span class="font-display font-bold text-2xl text-cream lowercase">bodywise</span>
+        </div>
+        <p class="mt-4 text-sm text-cream/70 max-w-xs">Gender-expansive fertility awareness education and reproductive-health support for all people with menstrual cycles.</p>
+      </div>
+      <nav class="text-sm">
+        <p class="font-display font-semibold text-cream mb-3">Explore</p>
+        <ul class="space-y-2 text-cream/75">
+          <li><a href="what-is-fam.html" class="hover:text-cream">What is Fertility Awareness?</a></li>
+          <li><a href="fa-for-avoiding-pregnancy.html" class="hover:text-cream">FA for Avoiding Pregnancy</a></li>
+          <li><a href="fa-for-achieving-pregnancy.html" class="hover:text-cream">FA for Achieving Pregnancy</a></li>
+          <li><a href="counselling.html" class="hover:text-cream">Counselling &amp; Practical Support</a></li>
+          <li><a href="workshops-trainings.html" class="hover:text-cream">Workshops &amp; Trainings</a></li>
+          <li><a href="about-working-with-me.html" class="hover:text-cream">About Working With Me</a></li>
+          <li><a href="contact.html" class="hover:text-cream">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="flex flex-col items-start gap-3">
+        <img src="images/badge-afap.png" alt="AFAP Accredited Fertility Awareness Educator" class="h-24 w-auto bg-white rounded-xl p-2">
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="max-w-content mx-auto px-5 py-5 text-xs sm:text-sm text-cream/55 flex flex-col sm:flex-row justify-between gap-2">
+        <p>© <span data-year>2026</span> Bodywise. All rights reserved.</p>
+        <p>Offered with care on the lands of the Anishinaabeg, Haudenosaunee &amp; Mississaugas of the Credit.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

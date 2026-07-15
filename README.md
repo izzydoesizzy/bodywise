@@ -9,10 +9,10 @@ successive design versions. All are plain static HTML/CSS/JS, no build step.
 | Folder | What it is |
 |--------|-----------|
 | [`v1/`](v1/) | **Exact frozen replica** of the original Wix site. Pixel-faithful archive, all assets local. Reference only. |
-| [`v2/`](v2/) | **Clean rebuild** off Wix. Editable, self-owned, reproduces the original content and look. |
-| [`v3/`](v3/) | **Boutique redesign** (in progress). Warm-editorial direction; same copy, new design system. |
+| [`v2/`](v2/) | **Clean rebuild** off Wix. Editable, self-owned, reproduces the original content and look. Preserved as-is. |
+| [`v4/`](v4/) | **Polished current version.** v2's design, with the text-heavy sections broken up: pull quotes, steppers, check grids, pill tags, accordions, callouts. |
 
-The live site to deploy will be whichever version is current (v2, then v3). `v1/` is an archive.
+The live site to deploy is `v4/`. `v1/` is an archive; `v2/` is the untouched baseline v4 grew from.
 
 ## Preview any version locally
 
@@ -21,12 +21,12 @@ No build needed. From the repo root:
 ```bash
 python3 -m http.server 8000
 # then open:
-#   http://localhost:8000/v3/   (redesign)
-#   http://localhost:8000/v2/   (clean rebuild)
+#   http://localhost:8000/v4/   (current, polished)
+#   http://localhost:8000/v2/   (clean rebuild baseline)
 #   http://localhost:8000/v1/   (original Wix archive)
 ```
 
-## Before going live — placeholders to fill in (v2 / v3)
+## Before going live — placeholders to fill in (v2 / v4)
 
 The old Wix forms and booking don't work on a static site, so they're wired to placeholders:
 

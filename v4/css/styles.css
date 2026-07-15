@@ -1,0 +1,268 @@
+/* ==========================================================================
+   Bodywise — brand stylesheet (layer on top of Tailwind CDN)
+   Palette sampled from the Bodywise logo: deep plum wordmark, magenta +
+   warm-orange cycle dots, on warm cream. Rounded, soft, wellness feel.
+   ========================================================================== */
+
+:root {
+  --plum:        #3a2130;
+  --plum-900:    #2a1723;
+  --berry:       #d10a6b;
+  --berry-dark:  #b00659;
+  --orange:      #e2913f;
+  --orange-soft: #f4c79a;
+  --cream:       #fbf6ef;
+  --blush:       #f8e7ef;
+  --sand:        #f4ecdd;
+  --ink:         #43323b;
+  --muted:       #766470;
+  --green:       #7fa05a;
+  --line:        #ecdfe6;
+}
+
+/* ---- Base typography ---------------------------------------------------- */
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Nunito Sans", system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+h1, h2, h3, h4, h5, .font-display {
+  font-family: "Poppins", system-ui, sans-serif;
+  color: var(--plum);
+  letter-spacing: -0.01em;
+}
+.font-accent {
+  font-family: "Fraunces", Georgia, serif;
+  font-style: italic;
+}
+
+/* Rich text blocks (page prose) */
+.prose-bw p { margin: 0 0 1.15rem; line-height: 1.75; }
+.prose-bw p:last-child { margin-bottom: 0; }
+.prose-bw strong { color: var(--plum); font-weight: 700; }
+.prose-bw a { color: var(--berry); text-decoration: underline; text-underline-offset: 3px; }
+.prose-bw a:hover { color: var(--berry-dark); }
+
+/* ---- Buttons ------------------------------------------------------------ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  font-family: "Poppins", sans-serif; font-weight: 600; font-size: .95rem;
+  padding: .8rem 1.6rem; border-radius: 999px; line-height: 1;
+  transition: transform .15s ease, background-color .15s ease, box-shadow .15s ease, color .15s ease;
+  cursor: pointer; text-align: center;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--berry); color: #fff; box-shadow: 0 8px 20px -8px rgba(209,10,107,.55); }
+.btn-primary:hover { background: var(--berry-dark); }
+.btn-plum { background: var(--plum); color: #fff; }
+.btn-plum:hover { background: var(--plum-900); }
+.btn-outline { background: transparent; color: var(--plum); box-shadow: inset 0 0 0 2px var(--plum); }
+.btn-outline:hover { background: var(--plum); color: #fff; }
+.btn-orange { background: var(--orange); color: var(--plum); }
+.btn-orange:hover { background: #d5822f; color:#fff; }
+
+/* ---- Eyebrow / labels --------------------------------------------------- */
+.eyebrow {
+  font-family: "Poppins", sans-serif; font-weight: 600; font-size: .78rem;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--berry);
+}
+
+/* ---- Cards -------------------------------------------------------------- */
+.card {
+  background: #fff; border-radius: 1.5rem; border: 1px solid var(--line);
+  box-shadow: 0 20px 40px -28px rgba(58,33,48,.35);
+}
+
+/* ---- Header / nav ------------------------------------------------------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(251,246,239,.9); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-link {
+  font-family: "Poppins", sans-serif; font-weight: 500; font-size: .95rem;
+  color: var(--plum); padding: .4rem .2rem; position: relative;
+}
+.nav-link:hover { color: var(--berry); }
+
+/* dropdown */
+.nav-dd { position: relative; }
+.nav-dd-panel {
+  position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(8px);
+  min-width: 260px; background: #fff; border: 1px solid var(--line);
+  border-radius: 1rem; box-shadow: 0 24px 48px -24px rgba(58,33,48,.4);
+  padding: .5rem; opacity: 0; visibility: hidden; transition: opacity .16s ease, transform .16s ease;
+}
+.nav-dd:hover .nav-dd-panel,
+.nav-dd:focus-within .nav-dd-panel { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(4px); }
+.nav-dd-item {
+  display: block; font-family: "Poppins", sans-serif; font-weight: 500; font-size: .92rem;
+  color: var(--plum); padding: .6rem .8rem; border-radius: .6rem;
+}
+.nav-dd-item:hover { background: var(--blush); color: var(--berry); }
+
+/* mobile menu */
+#mobileMenu { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+#mobileMenu.open { max-height: 720px; }
+
+/* ---- Decorative cycle-dot divider -------------------------------------- */
+.dot-cycle { display: inline-flex; gap: .4rem; }
+.dot-cycle span { width: 9px; height: 9px; border-radius: 999px; display: inline-block; }
+
+/* ---- Section helpers ---------------------------------------------------- */
+.bg-cream { background: var(--cream); }
+.bg-blush { background: var(--blush); }
+.bg-sand  { background: var(--sand); }
+.bg-plum  { background: var(--plum); }
+
+/* image treatments */
+.img-round { border-radius: 1.5rem; }
+.img-cover { object-fit: cover; width: 100%; height: 100%; }
+
+/* list with custom marker */
+.bw-list { list-style: none; padding: 0; margin: 0; }
+.bw-list li { position: relative; padding-left: 1.75rem; margin-bottom: .7rem; line-height: 1.6; }
+.bw-list li::before {
+  content: ""; position: absolute; left: 0; top: .5em;
+  width: 9px; height: 9px; border-radius: 999px; background: var(--orange);
+}
+
+/* pricing card highlight */
+.price-tag { font-family: "Poppins", sans-serif; font-weight: 700; color: var(--plum); }
+
+/* forms */
+.field {
+  width: 100%; padding: .8rem 1rem; border-radius: .8rem; border: 1px solid var(--line);
+  background: #fff; font-family: "Nunito Sans", sans-serif; color: var(--ink); font-size: 1rem;
+}
+.field:focus { outline: none; border-color: var(--berry); box-shadow: 0 0 0 3px rgba(209,10,107,.15); }
+label.field-label { font-family:"Poppins",sans-serif; font-weight:500; font-size:.85rem; color:var(--plum); display:block; margin-bottom:.35rem; }
+
+/* ==========================================================================
+   v4 additions — components for breaking up text-heavy sections.
+   Same visual language as the rest of the sheet (Poppins/Nunito/Fraunces,
+   soft rounded cards, berry + orange accents).
+   ========================================================================== */
+
+/* Pull quote: lift one key sentence out of the prose */
+.pullquote {
+  font-family: "Fraunces", Georgia, serif; font-style: italic; font-weight: 500;
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem); line-height: 1.3; color: var(--berry);
+  max-width: 26ch; margin: 2.5rem auto; text-align: center;
+}
+.pullquote .dots { display: flex; justify-content: center; gap: .4rem; margin-bottom: 1.1rem; }
+.pullquote .dots span { width: 8px; height: 8px; border-radius: 999px; }
+.pullquote--left { text-align: left; margin-left: 0; }
+.pullquote--left .dots { justify-content: flex-start; }
+.pullquote--plum { color: var(--plum); }
+
+/* Callout: important note or warning */
+.callout {
+  display: flex; gap: 1rem; align-items: flex-start;
+  background: var(--blush); border-left: 4px solid var(--berry);
+  border-radius: 1rem; padding: 1.25rem 1.5rem;
+}
+.callout.sand { background: var(--sand); border-left-color: var(--orange); }
+.callout .callout-icon { flex-shrink: 0; margin-top: .2rem; color: var(--berry); }
+.callout.sand .callout-icon { color: #b56f22; }
+.callout p { margin: 0; }
+.callout strong { color: var(--plum); }
+
+/* Stepper: numbered steps with connecting line */
+.stepper { display: grid; gap: 2rem; counter-reset: step; }
+@media (min-width: 768px) { .stepper { grid-template-columns: repeat(3, 1fr); } }
+.step { position: relative; }
+.step-num {
+  width: 3rem; height: 3rem; border-radius: 999px; display: flex; align-items: center; justify-content: center;
+  font-family: "Fraunces", serif; font-weight: 600; font-size: 1.3rem; color: #fff; background: var(--berry);
+  margin-bottom: 1rem;
+}
+.step:nth-child(2) .step-num { background: var(--orange); }
+.step:nth-child(3) .step-num { background: var(--plum); }
+@media (min-width: 768px) {
+  .step:not(:last-child)::after {
+    content: ""; position: absolute; top: 1.5rem; left: 3.6rem; right: -1.4rem; height: 1px;
+    background: var(--line);
+  }
+}
+.step-title { font-family: "Poppins", sans-serif; font-weight: 600; color: var(--plum); font-size: 1.05rem; }
+.step p { margin: .4rem 0 0; color: var(--muted); }
+
+/* Stat chip: small fact card */
+.stat-chip {
+  background: #fff; border: 1px solid var(--line); border-radius: 1rem;
+  padding: 1rem 1.25rem; text-align: center;
+}
+.stat-chip .big { font-family: "Fraunces", serif; font-weight: 600; font-size: 1.35rem; color: var(--berry); display: block; line-height: 1.2; }
+.stat-chip .small { font-size: .85rem; color: var(--muted); display: block; margin-top: .25rem; line-height: 1.4; }
+
+/* Check grid: checkmark cards */
+.check-grid { display: grid; gap: 1rem; }
+@media (min-width: 640px) { .check-grid { grid-template-columns: repeat(2, 1fr); } }
+.check-item {
+  display: flex; gap: .9rem; align-items: flex-start;
+  background: #fff; border: 1px solid var(--line); border-radius: 1rem; padding: 1.1rem 1.3rem;
+}
+.bg-sand .check-item, .bg-blush .check-item { border-color: transparent; box-shadow: 0 10px 24px -18px rgba(58,33,48,.25); }
+.check-item svg { flex-shrink: 0; margin-top: .25rem; }
+.check-item p { margin: 0; line-height: 1.55; }
+
+/* Pill list: soft tags instead of long bullet columns */
+.pill-list { display: flex; flex-wrap: wrap; gap: .6rem; padding: 0; margin: 0; list-style: none; }
+.pill-list li {
+  font-family: "Poppins", sans-serif; font-weight: 500; font-size: .92rem; color: var(--plum);
+  background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: .55rem 1.1rem;
+  line-height: 1.4;
+}
+.bg-blush .pill-list li, .bg-sand .pill-list li { border-color: transparent; }
+
+/* Accordion: native details/summary in card clothing */
+.accordion { border: 1px solid var(--line); border-radius: 1.25rem; background: #fff; overflow: hidden; }
+.accordion + .accordion { margin-top: .9rem; }
+.accordion summary {
+  list-style: none; cursor: pointer; padding: 1.35rem 1.5rem;
+  display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center;
+}
+.accordion summary::-webkit-details-marker { display: none; }
+.accordion summary:focus-visible { outline: 2.5px solid var(--berry); outline-offset: -2.5px; border-radius: 1.25rem; }
+.accordion .acc-title { font-family: "Poppins", sans-serif; font-weight: 600; font-size: 1.08rem; color: var(--berry); display: block; }
+.accordion .acc-teaser { font-size: .93rem; color: var(--muted); display: block; margin-top: .25rem; }
+.accordion .acc-chev { color: var(--berry); transition: transform .25s ease; }
+.accordion[open] .acc-chev { transform: rotate(180deg); }
+.accordion .acc-body { padding: 0 1.5rem 1.4rem; color: var(--ink); }
+.accordion .acc-body p { margin: 0; }
+@media (prefers-reduced-motion: reduce) { .accordion .acc-chev { transition: none; } }
+
+/* Litany: centered anaphora lines ("You are welcome here if...") */
+.litany { text-align: center; padding: 0; margin: 0; list-style: none; }
+.litany li {
+  font-family: "Fraunces", Georgia, serif; font-style: italic; font-weight: 500;
+  font-size: clamp(1.15rem, 2vw, 1.55rem); line-height: 1.45; color: var(--plum);
+  margin-bottom: .9rem;
+}
+.litany li strong { color: var(--berry); font-weight: 600; }
+
+/* Q&A block: rhetorical question, then the answer */
+.qa-block { border-left: 3px solid var(--orange); padding-left: 1.4rem; margin: 1.6rem 0; }
+.qa-block .q {
+  font-family: "Fraunces", Georgia, serif; font-style: italic; font-weight: 500;
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem); color: var(--plum); line-height: 1.4; margin: 0 0 .4rem;
+}
+
+/* Two-column prose for long uniform paragraph runs */
+@media (min-width: 900px) {
+  .prose-cols { columns: 2; column-gap: 3rem; }
+  .prose-cols p { break-inside: avoid; }
+}
+
+/* Inset panel: story/anecdote set apart from the main flow */
+.inset-panel { background: var(--blush); border-radius: 1.5rem; padding: 2rem 2.25rem; }
+.inset-panel.sand { background: var(--sand); }
+.inset-panel .lead-q {
+  font-family: "Fraunces", Georgia, serif; font-style: italic; font-weight: 500;
+  font-size: 1.25rem; color: var(--plum); line-height: 1.45; display: block; margin-bottom: .7rem;
+}
+.inset-panel p:last-child { margin-bottom: 0; }
