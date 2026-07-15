@@ -41,4 +41,4 @@ python3 -m http.server 8000
 ```
 
 > This is an archival/reference replica. For the version to actually deploy and edit going forward,
-> use the clean rebuild at the repo root — see the top-level `README.md`.
+> use the rebuild in [`../v2/`](../v2/). See the top-level [`README.md`](../README.md).

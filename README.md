@@ -1,81 +1,45 @@
 # Bodywise — feelbodywise.com
 
-Static marketing site for **Bodywise**, Laura's gender-expansive Fertility Awareness Method (FAM)
-education and sexual/reproductive-health practice. This is a clean, self-owned rebuild that moves the
-site **off Wix**. All content and images are local; nothing loads from the old Wix site.
+Website for **Bodywise**, Laura's gender-expansive Fertility Awareness Method (FAM) education and
+sexual/reproductive-health practice (Toronto). This repo holds the site's migration off Wix, plus
+successive design versions. All are plain static HTML/CSS/JS, no build step.
 
-Built as plain HTML + [Tailwind CSS](https://tailwindcss.com) (via CDN), with a small brand
-stylesheet and a touch of vanilla JavaScript. No build step, no framework, no server required.
+## Versions
 
-## Two versions in this repo
+| Folder | What it is |
+|--------|-----------|
+| [`v1/`](v1/) | **Exact frozen replica** of the original Wix site. Pixel-faithful archive, all assets local. Reference only. |
+| [`v2/`](v2/) | **Clean rebuild** off Wix. Editable, self-owned, reproduces the original content and look. |
+| [`v3/`](v3/) | **Boutique redesign** (in progress). Warm-editorial direction; same copy, new design system. |
 
-- **Repo root** — the **clean rebuild** (this README). A modern, editable, self-owned site that
-  reproduces the original's content and look. This is the version to deploy and change going forward.
-- **[`v1/`](v1/)** — an **exact frozen replica** of the original Wix site, captured as static
-  HTML/CSS/JS with all assets local. Kept for reference. See [`v1/README.md`](v1/README.md).
+The live site to deploy will be whichever version is current (v2, then v3). `v1/` is an archive.
 
-## Pages
+## Preview any version locally
 
-| File | Page |
-|------|------|
-| `index.html` | Home |
-| `what-is-fam.html` | What is Fertility Awareness? |
-| `fa-for-avoiding-pregnancy.html` | FA for Avoiding Pregnancy |
-| `fa-for-achieving-pregnancy.html` | FA for Achieving Pregnancy |
-| `counselling.html` | Counselling & Practical Support |
-| `about-working-with-me.html` | About Working With Me |
-| `workshops-trainings.html` | Workshops & Trainings |
-| `contact.html` | Contact |
-
-## Structure
-
-```
-bodywise/
-├── *.html            # the 8 pages (self-contained; header/footer repeated in each)
-├── css/styles.css    # brand colours, fonts, buttons, cards, nav
-├── js/main.js        # mobile menu toggle + footer year
-├── images/           # all photos, logo, favicons, partner + AFAP badge (local)
-├── robots.txt
-├── sitemap.xml
-└── .nojekyll         # lets GitHub Pages serve files as-is
-```
-
-## Preview locally
-
-No build needed. From this folder, run any static server:
+No build needed. From the repo root:
 
 ```bash
 python3 -m http.server 8000
-# then open http://localhost:8000
+# then open:
+#   http://localhost:8000/v3/   (redesign)
+#   http://localhost:8000/v2/   (clean rebuild)
+#   http://localhost:8000/v1/   (original Wix archive)
 ```
 
-## Before going live — 3 things to fill in
+## Before going live — placeholders to fill in (v2 / v3)
 
-The old Wix site used Wix's built-in forms and booking, which don't work on a static site. The rebuild
-wires them to [Formspree](https://formspree.io) (free tier) with placeholders. Search the project for
-each token and replace it:
+The old Wix forms and booking don't work on a static site, so they're wired to placeholders:
 
-1. **`REPLACE_ME`** — every form (newsletter signup, contact, counselling, workshop, waitlist) posts to
-   `https://formspree.io/f/REPLACE_ME`. Create a free Formspree form and paste its ID. One shared ID is
-   fine; you can also make separate ones per form.
-2. **`EMAIL_TODO`** — on `contact.html`, replace with Laura's real email for the "prefer email" link.
-3. **Booking link** — the "Book a Call" button and "Book Now" CTAs currently point to `contact.html`.
-   If Laura uses a scheduler (Calendly, Acuity, etc.), swap those `href="contact.html"` links (marked
-   with a `<!-- TODO -->` comment) for the booking URL.
+1. **`REPLACE_ME`** — Formspree form ID in every form's action URL. Create a free
+   [Formspree](https://formspree.io) form and paste its ID.
+2. **`EMAIL_TODO`** — Laura's real email for the `mailto:` link on `contact.html`.
+3. **Booking link** — the "Book a Call" CTAs point at `contact.html` pending a scheduler
+   (Calendly/Acuity); swap those `href`s (marked with `<!-- TODO -->`) for the booking URL.
 
-Optional: confirm the domain in `sitemap.xml` and `robots.txt` (currently `feelbodywise.com`).
+Optional: confirm the domain in each version's `sitemap.xml` / `robots.txt` (currently `feelbodywise.com`).
 
 ## Deploy
 
-Any static host works:
-
-- **GitHub Pages** — repo Settings → Pages → deploy from `main` branch, root. `.nojekyll` is already present.
-- **Netlify / Vercel** — drag-and-drop the folder, or connect the repo. No build command; publish directory is the root.
-
-Point `feelbodywise.com` at the new host once you're happy with it.
-
-## Notes on content
-
-Copy is reproduced from the live site. A couple of dated references remain verbatim (e.g. cohort
-enrolment months) — update these in the relevant `.html` file as they change. Pricing shown:
-programs `$356` / `$1458 CAD`, counselling `$150 CAD` per 50-min session, workshops `$2000–$2500 CAD`.
+Any static host (GitHub Pages, Netlify, Vercel). Serve the current version's folder at the domain
+root, then point `feelbodywise.com` at it. `.nojekyll` at the repo root lets GitHub Pages serve files
+as-is.
