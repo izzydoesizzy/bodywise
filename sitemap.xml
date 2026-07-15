@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Replace the domain below with the site's production domain if it differs. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://feelbodywise.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://feelbodywise.com/what-is-fam.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://feelbodywise.com/fa-for-avoiding-pregnancy.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://feelbodywise.com/fa-for-achieving-pregnancy.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://feelbodywise.com/counselling.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://feelbodywise.com/about-working-with-me.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://feelbodywise.com/workshops-trainings.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://feelbodywise.com/contact.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+</urlset>
