@@ -226,6 +226,12 @@ label.field-label { font-family:"Poppins",sans-serif; font-weight:500; font-size
   list-style: none; cursor: pointer; padding: 1.35rem 1.5rem;
   display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center;
 }
+.accordion summary.has-thumb { grid-template-columns: auto 1fr auto; }
+.acc-thumb {
+  width: 64px; height: 64px; border-radius: .9rem; object-fit: cover;
+  background: var(--sand); flex-shrink: 0;
+}
+@media (max-width: 480px) { .acc-thumb { width: 52px; height: 52px; } }
 .accordion summary::-webkit-details-marker { display: none; }
 .accordion summary:focus-visible { outline: 2.5px solid var(--berry); outline-offset: -2.5px; border-radius: 1.25rem; }
 .accordion .acc-title { font-family: "Poppins", sans-serif; font-weight: 600; font-size: 1.08rem; color: var(--berry); display: block; }
@@ -235,6 +241,17 @@ label.field-label { font-family:"Poppins",sans-serif; font-weight:500; font-size
 .accordion .acc-body { padding: 0 1.5rem 1.4rem; color: var(--ink); }
 .accordion .acc-body p { margin: 0; }
 @media (prefers-reduced-motion: reduce) { .accordion .acc-chev { transition: none; } }
+
+/* Chips: tiny audience tags inside accordion bodies ("Best for") */
+.chip-row { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; margin-top: 1rem; }
+.chip-label {
+  font-family: "Poppins", sans-serif; font-weight: 600; font-size: .72rem;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-right: .2rem;
+}
+.chip {
+  font-family: "Poppins", sans-serif; font-weight: 500; font-size: .78rem; color: var(--plum);
+  background: var(--blush); border-radius: 999px; padding: .32rem .8rem; line-height: 1.3;
+}
 
 /* Litany: centered anaphora lines ("You are welcome here if...") */
 .litany { text-align: center; padding: 0; margin: 0; list-style: none; }
