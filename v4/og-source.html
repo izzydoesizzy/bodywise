@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400..600&family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:1200px; height:630px; overflow:hidden; }
+  .og {
+    position:relative; width:1200px; height:630px;
+    background: linear-gradient(135deg, #fbf6ef 0%, #f8e7ef 55%, #f4ecdd 100%);
+  }
+  .frame {
+    position:absolute; inset:26px; border:1.5px solid rgba(209,10,107,.35);
+    border-radius:6px; z-index:1;
+  }
+  .content { position:absolute; inset:0; z-index:2; padding:64px 70px; }
+  .brand { display:flex; align-items:center; gap:14px; }
+  .ring { position:relative; width:44px; height:44px; }
+  .ring span { position:absolute; border-radius:999px; }
+  .brandname { font-family:'Poppins',sans-serif; font-weight:600; font-size:26px; letter-spacing:5px; color:#3a2130; text-transform:lowercase; }
+  .headline { margin-top:58px; font-size:62px; line-height:1.16; }
+  .headline .roman { font-family:'Poppins',sans-serif; font-weight:700; color:#3a2130; letter-spacing:-.5px; }
+  .headline .ital { font-family:'Fraunces',Georgia,serif; font-style:italic; font-weight:550; color:#d10a6b; }
+  .cred { margin-top:34px; font-family:'Nunito Sans',sans-serif; font-size:23px; color:#43323b; }
+  .cred b { font-weight:700; color:#3a2130; }
+  .cred .row2 { margin-top:8px; color:#766470; }
+  .foot { position:absolute; left:70px; bottom:64px; display:flex; align-items:center; gap:16px; }
+  .foot .rule { width:44px; height:2px; background:#d10a6b; }
+  .foot .domain { font-family:'Poppins',sans-serif; font-weight:600; font-size:19px; letter-spacing:4px; color:#3a2130; }
+  .arch {
+    position:absolute; right:76px; bottom:27.5px; width:364px; height:540px;
+    border-radius:185px 185px 0 0; overflow:hidden; z-index:2;
+    outline:1.5px solid rgba(209,10,107,.35); outline-offset:10px;
+  }
+  .arch img {
+    width:100%; height:100%; object-fit:cover; object-position:52% 14%;
+    transform:scale(1.35); transform-origin:52% 26%;
+  }
+</style>
+</head>
+<body>
+  <div class="og">
+    <div class="frame"></div>
+    <div class="content">
+      <div class="brand"><div class="ring" id="ring"></div><div class="brandname">bodywise</div></div>
+      <div class="headline">
+        <div class="roman">Body literacy.</div>
+        <div class="roman">Self-knowledge.</div>
+        <div class="ital">Wisdom in every cycle.</div>
+      </div>
+      <div class="cred">
+        <div><b>Laura</b> &nbsp;&middot;&nbsp; Holistic Reproductive Health Practitioner</div>
+        <div class="row2">FAM Education &nbsp;&middot;&nbsp; Counselling &nbsp;&middot;&nbsp; Workshops &amp; Trainings</div>
+      </div>
+      <div class="foot"><div class="rule"></div><div class="domain">FEELBODYWISE.COM</div></div>
+    </div>
+    <div class="arch"><img src="laura-hero.jpg" alt=""></div>
+  </div>
+  <script>
+    const ring = document.getElementById('ring');
+    const N=16, R=17, C=22;
+    for (let i=0;i<N;i++){ const a=(i/N)*Math.PI*2-Math.PI/2, big=i%2===0, s=big?7:4.5;
+      const d=document.createElement('span');
+      d.style.width=d.style.height=s+'px';
+      d.style.left=(C+R*Math.cos(a)-s/2)+'px'; d.style.top=(C+R*Math.sin(a)-s/2)+'px';
+      d.style.background=big?'#e2913f':'#d10a6b'; ring.appendChild(d); }
+  </script>
+</body>
+</html>
