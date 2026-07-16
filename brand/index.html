@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bodywise Brand Guidelines</title>
+  <meta name="description" content="Brand guidelines for Bodywise: logo, colour palette, typography, motifs, components, imagery, and voice.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400..600&family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { plum:'#3a2130', plumdark:'#2a1723', berry:'#d10a6b', berrydark:'#b00659', orange:'#e2913f', peach:'#f4c79a', cream:'#fbf6ef', blush:'#f8e7ef', sand:'#f4ecdd', ink:'#43323b', muted:'#766470', green:'#7fa05a', line:'#ecdfe6' },
+      fontFamily: { display:['Poppins','sans-serif'], body:['"Nunito Sans"','sans-serif'], accent:['Fraunces','serif'] },
+      maxWidth: { content:'1120px' }
+    }}}
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family:'Nunito Sans',sans-serif; color:#43323b; background:#fbf6ef; -webkit-font-smoothing:antialiased; }
+    h1,h2,h3,h4 { font-family:'Poppins',sans-serif; color:#3a2130; letter-spacing:-.01em; }
+    .accent { font-family:'Fraunces',Georgia,serif; font-style:italic; }
+    .eyebrow { font-family:'Poppins',sans-serif; font-weight:600; font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; color:#d10a6b; }
+    .card { background:#fff; border-radius:1.5rem; border:1px solid #ecdfe6; }
+    .secnum { font-family:'Fraunces',Georgia,serif; font-style:italic; font-weight:600; color:#e2913f; }
+    .cring { position:relative; display:inline-block; }
+    .cring span { position:absolute; border-radius:999px; }
+    .swatch { border-radius:1.25rem; overflow:hidden; border:1px solid #ecdfe6; cursor:pointer; transition:transform .15s ease; background:#fff; }
+    .swatch:hover { transform:translateY(-3px); }
+    .swatch .chip { height:110px; }
+    .swatch .meta { padding: .9rem 1.1rem; }
+    .swatch .name { font-family:'Poppins',sans-serif; font-weight:600; color:#3a2130; font-size:.95rem; }
+    .swatch .hex { font-size:.82rem; color:#766470; letter-spacing:.04em; }
+    .swatch .use { font-size:.78rem; color:#766470; margin-top:.25rem; line-height:1.4; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; font-family:'Poppins',sans-serif; font-weight:600; font-size:.95rem; padding:.8rem 1.6rem; border-radius:999px; line-height:1; }
+    .btn-primary { background:#d10a6b; color:#fff; box-shadow:0 8px 20px -8px rgba(209,10,107,.55); }
+    .btn-plum { background:#3a2130; color:#fff; }
+    .btn-outline { box-shadow:inset 0 0 0 2px #3a2130; color:#3a2130; }
+    .btn-orange { background:#e2913f; color:#3a2130; }
+    .pill { font-family:'Poppins',sans-serif; font-weight:500; font-size:.92rem; color:#3a2130; background:#fff; border:1px solid #ecdfe6; border-radius:999px; padding:.55rem 1.1rem; }
+    .chip-sm { font-family:'Poppins',sans-serif; font-weight:500; font-size:.78rem; color:#3a2130; background:#f8e7ef; border-radius:999px; padding:.32rem .8rem; }
+    .callout { display:flex; gap:1rem; align-items:flex-start; background:#f8e7ef; border-left:4px solid #d10a6b; border-radius:1rem; padding:1.25rem 1.5rem; }
+    .pullquote-demo { font-family:'Fraunces',Georgia,serif; font-style:italic; font-weight:500; font-size:1.7rem; line-height:1.3; color:#d10a6b; text-align:center; }
+    .type-scale div { border-bottom:1px solid #ecdfe6; padding: .9rem 0; display:flex; align-items:baseline; gap:1.5rem; }
+    .type-scale .label { font-size:.78rem; color:#766470; width:150px; flex-shrink:0; font-family:'Nunito Sans',sans-serif; }
+    code.snippet { display:block; background:#2a1723; color:#f4c79a; font-size:.8rem; padding:1.1rem 1.3rem; border-radius:1rem; overflow-x:auto; white-space:pre; line-height:1.6; }
+    .donts li { position:relative; padding-left:1.6rem; margin-bottom:.55rem; }
+    .donts li::before { content:"✕"; position:absolute; left:0; color:#d10a6b; font-weight:700; }
+    .dos li { position:relative; padding-left:1.6rem; margin-bottom:.55rem; }
+    .dos li::before { content:"✓"; position:absolute; left:0; color:#7fa05a; font-weight:700; }
+    .navlink { font-family:'Poppins',sans-serif; font-weight:500; font-size:.85rem; color:#3a2130; }
+    .navlink:hover { color:#d10a6b; }
+    .toast { position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:#3a2130; color:#fbf6ef; font-family:'Poppins',sans-serif; font-size:.85rem; padding:.6rem 1.2rem; border-radius:999px; opacity:0; transition:opacity .25s ease; pointer-events:none; z-index:99; }
+    .toast.show { opacity:1; }
+  </style>
+</head>
+<body>
+
+  <!-- ===== STICKY NAV ===== -->
+  <header class="sticky top-0 z-50 border-b border-line" style="background:rgba(251,246,239,.92); backdrop-filter:blur(10px);">
+    <div class="max-w-content mx-auto px-5 h-16 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-2">
+        <span class="cring" id="nav-ring" style="width:30px;height:30px"></span>
+        <span class="font-display font-bold text-plum text-lg lowercase">bodywise <span class="font-normal text-muted">/ brand</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-5">
+        <a class="navlink" href="#logo">Logo</a>
+        <a class="navlink" href="#colour">Colour</a>
+        <a class="navlink" href="#type">Type</a>
+        <a class="navlink" href="#motifs">Motifs</a>
+        <a class="navlink" href="#components">Components</a>
+        <a class="navlink" href="#imagery">Imagery</a>
+        <a class="navlink" href="#voice">Voice</a>
+        <a class="navlink" href="#assets">Assets</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ===== COVER ===== -->
+    <section class="relative overflow-hidden">
+      <div class="cring absolute -right-40 top-1/2 -translate-y-1/2 opacity-90 hidden lg:block" id="cover-ring" style="width:520px;height:520px"></div>
+      <div class="max-w-content mx-auto px-5 pt-24 pb-20 relative z-10">
+        <img src="assets/logo.jpg" alt="Bodywise wordmark" class="h-16 w-auto rounded-xl" style="mix-blend-mode:multiply">
+        <h1 class="mt-10 text-5xl md:text-6xl font-bold leading-tight">Brand<br>Guidelines</h1>
+        <p class="accent text-2xl md:text-3xl text-berry mt-6 max-w-lg">Find the wisdom in every cycle, enjoy vitality in every phase of life.</p>
+        <p class="mt-8 text-muted max-w-md text-lg">The visual and verbal identity of Bodywise: gender-expansive fertility awareness education, counselling, and workshops with Laura.</p>
+        <div class="flex gap-2 mt-8">
+          <span class="chip-sm">Version 1.0</span>
+          <span class="chip-sm">July 2026</span>
+          <span class="chip-sm">feelbodywise.com</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 01 ESSENCE ===== -->
+    <section class="bg-plum text-cream">
+      <div class="max-w-content mx-auto px-5 py-20">
+        <p class="eyebrow" style="color:#f4c79a"><span class="secnum not-italic mr-2">01</span> Brand essence</p>
+        <div class="grid md:grid-cols-3 gap-10 mt-10">
+          <div>
+            <h3 class="font-display font-semibold text-xl" style="color:#fbf6ef">Warm</h3>
+            <p class="mt-3 text-cream/75" style="color:rgba(251,246,239,.75)">Bodywise sounds like a knowledgeable friend, never a clinic. Soft colour, rounded shapes, generous space, and photography full of daylight and plants.</p>
+          </div>
+          <div>
+            <h3 class="font-display font-semibold text-xl" style="color:#fbf6ef">Empowering</h3>
+            <p class="mt-3" style="color:rgba(251,246,239,.75)">The client is always in the driver's seat. The brand informs and supports; it never prescribes, pressures, or promises outcomes.</p>
+          </div>
+          <div>
+            <h3 class="font-display font-semibold text-xl" style="color:#fbf6ef">Inclusive</h3>
+            <p class="mt-3" style="color:rgba(251,246,239,.75)">Explicitly gender-expansive. Bodywise speaks to all people with menstrual cycles, and the design avoids clichés of pink-for-women femininity while staying warm.</p>
+          </div>
+        </div>
+        <p class="accent text-2xl md:text-3xl text-center max-w-2xl mx-auto mt-16" style="color:#fbf6ef">"It is the right of every person to know how their body works."</p>
+      </div>
+    </section>
+
+    <!-- ===== 02 LOGO ===== -->
+    <section id="logo" class="max-w-content mx-auto px-5 py-20">
+      <p class="eyebrow"><span class="secnum not-italic mr-2">02</span> Logo</p>
+      <h2 class="text-3xl md:text-4xl font-semibold mt-3">The wordmark &amp; the cycle ring</h2>
+      <p class="text-muted mt-4 max-w-2xl">The logo pairs a lowercase Poppins-style wordmark in Deep Plum with the cycle ring: sixteen dots alternating Warm Orange and Berry, representing the phases of a cycle. The ring may be used alone as an avatar, favicon, or accent.</p>
+
+      <div class="grid md:grid-cols-3 gap-6 mt-10">
+        <div class="card p-10 flex items-center justify-center md:col-span-2 bg-white">
+          <img src="assets/logo.jpg" alt="Primary wordmark" class="w-full max-w-sm">
+        </div>
+        <div class="card p-10 flex items-center justify-center bg-white">
+          <span class="cring" id="mark-ring" style="width:96px;height:96px" role="img" aria-label="Cycle ring mark"></span>
+        </div>
+        <div class="rounded-3xl p-10 flex items-center justify-center bg-plum md:col-span-2">
+          <div class="flex items-center gap-4">
+            <span class="cring" id="dark-ring" style="width:52px;height:52px"></span>
+            <span class="font-display font-bold text-4xl lowercase" style="color:#fbf6ef">bodywise</span>
+          </div>
+        </div>
+        <div class="rounded-3xl p-10 flex items-center justify-center" style="background:#d10a6b">
+          <span class="cring" id="berry-ring" style="width:64px;height:64px"></span>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-8">
+        <div class="card p-8">
+          <h4 class="font-display font-semibold text-lg text-green">Do</h4>
+          <ul class="dos mt-4 text-[.95rem]">
+            <li>Use the wordmark on Cream, White, Blush, or Sand backgrounds.</li>
+            <li>Use the cream recreation (text + ring) on Plum or Berry fields.</li>
+            <li>Keep clearspace around the logo equal to the ring's diameter.</li>
+            <li>Minimum wordmark width: 120&nbsp;px on screen.</li>
+            <li>Use the ring alone at small sizes (favicons, avatars).</li>
+          </ul>
+        </div>
+        <div class="card p-8">
+          <h4 class="font-display font-semibold text-lg text-berry">Don't</h4>
+          <ul class="donts mt-4 text-[.95rem]">
+            <li>Recolour the wordmark or the ring dots.</li>
+            <li>Stretch, rotate, outline, or add shadows.</li>
+            <li>Place the dark wordmark over photography or busy patterns.</li>
+            <li>Set the name in title case: it is always lowercase <em>bodywise</em>.</li>
+            <li>Redraw the ring with evenly-sized dots; the size alternation is intentional.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 03 COLOUR ===== -->
+    <section id="colour" class="bg-white border-y border-line">
+      <div class="max-w-content mx-auto px-5 py-20">
+        <p class="eyebrow"><span class="secnum not-italic mr-2">03</span> Colour</p>
+        <h2 class="text-3xl md:text-4xl font-semibold mt-3">Palette</h2>
+        <p class="text-muted mt-4 max-w-2xl">Warm neutrals carry the brand; Berry and Orange are accents, not wallpaper. Click any swatch to copy its hex.</p>
+
+        <h3 class="font-display font-semibold text-lg mt-10 mb-4">Core</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+          <div class="swatch" data-hex="#3a2130"><div class="chip" style="background:#3a2130"></div><div class="meta"><div class="name">Deep Plum</div><div class="hex">#3A2130 · RGB 58 33 48</div><div class="use">Headings, dark fields, footer</div></div></div>
+          <div class="swatch" data-hex="#d10a6b"><div class="chip" style="background:#d10a6b"></div><div class="meta"><div class="name">Berry</div><div class="hex">#D10A6B · RGB 209 10 107</div><div class="use">Primary accent, CTAs, links, pull quotes</div></div></div>
+          <div class="swatch" data-hex="#e2913f"><div class="chip" style="background:#e2913f"></div><div class="meta"><div class="name">Warm Orange</div><div class="hex">#E2913F · RGB 226 145 63</div><div class="use">Secondary accent, bullets, ring dots</div></div></div>
+          <div class="swatch" data-hex="#fbf6ef"><div class="chip" style="background:#fbf6ef; border-bottom:1px solid #ecdfe6"></div><div class="meta"><div class="name">Cream</div><div class="hex">#FBF6EF · RGB 251 246 239</div><div class="use">Default page background</div></div></div>
+        </div>
+
+        <h3 class="font-display font-semibold text-lg mt-10 mb-4">Supporting</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+          <div class="swatch" data-hex="#f8e7ef"><div class="chip" style="background:#f8e7ef"></div><div class="meta"><div class="name">Blush</div><div class="hex">#F8E7EF</div><div class="use">Tinted sections, callouts, chips</div></div></div>
+          <div class="swatch" data-hex="#f4ecdd"><div class="chip" style="background:#f4ecdd"></div><div class="meta"><div class="name">Sand</div><div class="hex">#F4ECDD</div><div class="use">Alternate tinted sections</div></div></div>
+          <div class="swatch" data-hex="#f4c79a"><div class="chip" style="background:#f4c79a"></div><div class="meta"><div class="name">Peach</div><div class="hex">#F4C79A</div><div class="use">Highlights on dark plum</div></div></div>
+          <div class="swatch" data-hex="#7fa05a"><div class="chip" style="background:#7fa05a"></div><div class="meta"><div class="name">Leaf</div><div class="hex">#7FA05A</div><div class="use">Occasional third accent</div></div></div>
+          <div class="swatch" data-hex="#43323b"><div class="chip" style="background:#43323b"></div><div class="meta"><div class="name">Ink</div><div class="hex">#43323B</div><div class="use">Body text</div></div></div>
+          <div class="swatch" data-hex="#766470"><div class="chip" style="background:#766470"></div><div class="meta"><div class="name">Muted</div><div class="hex">#766470</div><div class="use">Secondary text, captions</div></div></div>
+          <div class="swatch" data-hex="#ecdfe6"><div class="chip" style="background:#ecdfe6"></div><div class="meta"><div class="name">Line</div><div class="hex">#ECDFE6</div><div class="use">Hairlines, card borders</div></div></div>
+          <div class="swatch" data-hex="#2a1723"><div class="chip" style="background:#2a1723"></div><div class="meta"><div class="name">Plum 900</div><div class="hex">#2A1723</div><div class="use">Hover state on plum</div></div></div>
+        </div>
+
+        <h3 class="font-display font-semibold text-lg mt-12 mb-4">Proportions</h3>
+        <div class="rounded-full overflow-hidden flex h-9 border border-line">
+          <div style="width:52%;background:#fbf6ef" title="Cream"></div>
+          <div style="width:16%;background:#ffffff" title="White"></div>
+          <div style="width:10%;background:#f8e7ef" title="Blush"></div>
+          <div style="width:10%;background:#f4ecdd" title="Sand"></div>
+          <div style="width:6%;background:#3a2130" title="Plum"></div>
+          <div style="width:4%;background:#d10a6b" title="Berry"></div>
+          <div style="width:2%;background:#e2913f" title="Orange"></div>
+        </div>
+        <p class="text-sm text-muted mt-3">Mostly warm neutrals. Plum appears in type and one dark band per page; Berry and Orange only as accents.</p>
+
+        <div class="callout mt-10">
+          <p class="m-0"><strong class="text-plum">Accessibility:</strong> body text is Ink on Cream/White (AAA). White type on Berry and Cream type on Plum both pass AA for large text and buttons. Never set Orange text on Cream; use it for marks and fills only.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 04 TYPE ===== -->
+    <section id="type" class="max-w-content mx-auto px-5 py-20">
+      <p class="eyebrow"><span class="secnum not-italic mr-2">04</span> Typography</p>
+      <h2 class="text-3xl md:text-4xl font-semibold mt-3">Three voices, one family feel</h2>
+
+      <div class="grid md:grid-cols-3 gap-6 mt-10">
+        <div class="card p-8">
+          <p class="text-sm text-muted">Display · headings, buttons, nav</p>
+          <p class="font-display font-bold text-4xl mt-4 text-plum">Poppins</p>
+          <p class="font-display mt-4 text-plum text-lg">AaBbCc 0123456789<br><span class="font-medium">Medium</span> · <span class="font-semibold">SemiBold</span> · <span class="font-bold">Bold</span></p>
+        </div>
+        <div class="card p-8">
+          <p class="text-sm text-muted">Accent · pull quotes, taglines, numerals</p>
+          <p class="accent text-4xl mt-4 text-berry" style="font-weight:550">Fraunces</p>
+          <p class="accent mt-4 text-berry text-lg">Always italic, always sparingly:<br>wisdom in every cycle.</p>
+        </div>
+        <div class="card p-8">
+          <p class="text-sm text-muted">Body · paragraphs, lists, forms</p>
+          <p class="text-4xl mt-4 text-plum" style="font-weight:700">Nunito Sans</p>
+          <p class="mt-4 text-ink text-lg">Warm, rounded, effortlessly readable at length. Regular for body, SemiBold for emphasis.</p>
+        </div>
+      </div>
+
+      <h3 class="font-display font-semibold text-lg mt-12 mb-2">Scale</h3>
+      <div class="type-scale">
+        <div><span class="label">H1 · Poppins Bold 48–56</span><span class="font-display font-bold text-5xl text-plum">Body literacy</span></div>
+        <div><span class="label">H2 · Poppins SemiBold 30–36</span><span class="font-display font-semibold text-3xl text-plum">Working together</span></div>
+        <div><span class="label">H3 · Poppins SemiBold 18–20</span><span class="font-display font-semibold text-xl text-plum">What's included</span></div>
+        <div><span class="label">Tagline · Fraunces Italic 22–34</span><span class="accent text-2xl text-berry">Find the wisdom in every cycle</span></div>
+        <div><span class="label">Body · Nunito Sans 16–18</span><span class="text-lg text-ink">You are in the driver's seat. I am here to teach you how to be your own scientist.</span></div>
+        <div><span class="label">Eyebrow · Poppins 12 caps</span><span class="eyebrow">Gender-expansive education</span></div>
+      </div>
+
+      <h3 class="font-display font-semibold text-lg mt-12 mb-3">Embed</h3>
+      <code class="snippet">&lt;link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400..600&amp;family=Nunito+Sans:wght@400;600;700&amp;family=Poppins:wght@500;600;700&amp;display=swap" rel="stylesheet"&gt;</code>
+    </section>
+
+    <!-- ===== 05 MOTIFS ===== -->
+    <section id="motifs" class="bg-white border-y border-line">
+      <div class="max-w-content mx-auto px-5 py-20">
+        <p class="eyebrow"><span class="secnum not-italic mr-2">05</span> Motifs &amp; shape</p>
+        <h2 class="text-3xl md:text-4xl font-semibold mt-3">The shapes of Bodywise</h2>
+        <div class="grid md:grid-cols-3 gap-6 mt-10">
+          <div class="card p-8 text-center">
+            <div class="flex items-center justify-center gap-6">
+              <span class="cring" id="m-ring1" style="width:80px;height:80px"></span>
+              <span class="cring" id="m-ring2" style="width:52px;height:52px"></span>
+            </div>
+            <h4 class="font-display font-semibold mt-6 text-plum">The cycle ring</h4>
+            <p class="text-sm text-muted mt-2">16 dots, alternating Orange (larger) and Berry (smaller). Used as logo mark, section ornament, and watermark.</p>
+          </div>
+          <div class="card p-8 text-center">
+            <div class="flex justify-center gap-2 mt-6"><i class="inline-block w-2.5 h-2.5 rounded-full" style="background:#e2913f"></i><i class="inline-block w-2.5 h-2.5 rounded-full" style="background:#d10a6b"></i><i class="inline-block w-2.5 h-2.5 rounded-full" style="background:#e2913f"></i><i class="inline-block w-2.5 h-2.5 rounded-full" style="background:#d10a6b"></i></div>
+            <h4 class="font-display font-semibold mt-8 text-plum">The dot divider</h4>
+            <p class="text-sm text-muted mt-2">Four alternating dots introduce centred moments: pull quotes, newsletter, closing sections.</p>
+          </div>
+          <div class="card p-8 text-center">
+            <div class="mx-auto overflow-hidden" style="width:110px;height:150px;border-radius:60px 60px 0 0">
+              <img src="assets/laura-hero.jpg" alt="" class="w-full h-full object-cover">
+            </div>
+            <h4 class="font-display font-semibold mt-5 text-plum">The arch</h4>
+            <p class="text-sm text-muted mt-2">Doorway-shaped portrait crops for people. Soft circles and generous 24&nbsp;px card radii everywhere else. No sharp corners, ever.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 06 COMPONENTS ===== -->
+    <section id="components" class="max-w-content mx-auto px-5 py-20">
+      <p class="eyebrow"><span class="secnum not-italic mr-2">06</span> Components</p>
+      <h2 class="text-3xl md:text-4xl font-semibold mt-3">Building blocks</h2>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-10">
+        <div class="card p-8">
+          <h4 class="font-display font-semibold text-plum">Buttons</h4>
+          <div class="flex flex-wrap gap-3 mt-5">
+            <span class="btn btn-primary">Book a Call</span>
+            <span class="btn btn-outline">Work With Me</span>
+            <span class="btn btn-plum">About</span>
+            <span class="btn btn-orange">Book now</span>
+          </div>
+          <p class="text-sm text-muted mt-4">Fully rounded. Berry for the primary action, one per screen.</p>
+        </div>
+        <div class="card p-8">
+          <h4 class="font-display font-semibold text-plum">Chips &amp; pills</h4>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="pill">Birth control options</span>
+            <span class="pill">Crisis support</span>
+            <span class="chip-sm">Best for</span>
+            <span class="chip-sm">Ages 16+</span>
+          </div>
+          <p class="text-sm text-muted mt-4">Pills replace long bullet lists; small blush chips tag audiences and facts.</p>
+        </div>
+        <div class="card p-8">
+          <h4 class="font-display font-semibold text-plum">Callout</h4>
+          <div class="callout mt-5"><p class="m-0"><strong class="text-plum">Do not rely on an app for birth control</strong> without making your own body observations.</p></div>
+          <p class="text-sm text-muted mt-4">Blush field, berry left rule. For warnings and important notes.</p>
+        </div>
+        <div class="card p-8">
+          <h4 class="font-display font-semibold text-plum">Pull quote</h4>
+          <div class="flex justify-center gap-2 mt-6"><i class="inline-block w-2 h-2 rounded-full" style="background:#e2913f"></i><i class="inline-block w-2 h-2 rounded-full" style="background:#d10a6b"></i><i class="inline-block w-2 h-2 rounded-full" style="background:#e2913f"></i></div>
+          <p class="pullquote-demo mt-3">You are the boss of your own body.</p>
+          <p class="text-sm text-muted mt-4 text-center">One key sentence per section, lifted in Fraunces italic Berry.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 07 IMAGERY ===== -->
+    <section id="imagery" class="bg-white border-y border-line">
+      <div class="max-w-content mx-auto px-5 py-20">
+        <p class="eyebrow"><span class="secnum not-italic mr-2">07</span> Imagery</p>
+        <h2 class="text-3xl md:text-4xl font-semibold mt-3">Two image languages</h2>
+
+        <h3 class="font-display font-semibold text-lg mt-10 mb-4">Photography — warm, human, daylight</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <img src="assets/laura-hero.jpg" class="rounded-2xl object-cover w-full h-44" alt="Laura portrait">
+          <img src="assets/laura-3.jpg" class="rounded-2xl object-cover w-full h-44" alt="Laura in a plant-filled room">
+          <img src="assets/counselling-couch.jpg" class="rounded-2xl object-cover w-full h-44" alt="Warm counselling space">
+          <img src="assets/cherry-tree.jpg" class="rounded-2xl object-cover w-full h-44" alt="Cherry blossoms">
+        </div>
+        <ul class="dos mt-6 text-[.95rem] max-w-2xl">
+          <li>Natural light, warm wood, plants, lived-in spaces.</li>
+          <li>Laura looks at the camera: approachable, smiling, present.</li>
+          <li>Nature stands in for cycles and seasons (blossoms, sky, mountains).</li>
+        </ul>
+
+        <h3 class="font-display font-semibold text-lg mt-12 mb-4">Illustration — the watercolor set</h3>
+        <div class="grid grid-cols-3 md:grid-cols-5 gap-4 items-center">
+          <img src="assets/blooming-women.png" class="w-full max-h-40 object-contain" alt="Blooming figures">
+          <img src="assets/butterfly.png" class="w-full max-h-28 object-contain" alt="Butterfly">
+          <img src="assets/meditation.png" class="w-full max-h-28 object-contain" alt="Meditation">
+          <img src="assets/expecting.png" class="w-full max-h-28 object-contain" alt="Expecting">
+          <img src="assets/orange.png" class="w-full max-h-28 object-contain" alt="Orange halves">
+        </div>
+        <p class="text-sm text-muted mt-4 max-w-2xl">Hand-painted watercolors add softness and metaphor (fruit cross-sections, transformation, growth). Use on Cream/Blush panels; never overlay text on them.</p>
+      </div>
+    </section>
+
+    <!-- ===== 08 VOICE ===== -->
+    <section id="voice" class="max-w-content mx-auto px-5 py-20">
+      <p class="eyebrow"><span class="secnum not-italic mr-2">08</span> Voice &amp; tone</p>
+      <h2 class="text-3xl md:text-4xl font-semibold mt-3">How Bodywise speaks</h2>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-10">
+        <div class="card p-8">
+          <ul class="dos text-[.98rem]">
+            <li><strong>Speak to "you."</strong> Direct, second-person, one reader at a time.</li>
+            <li><strong>Empower, never prescribe.</strong> "Only YOU know what is best for you."</li>
+            <li><strong>Gender-expansive always.</strong> "People with menstrual cycles," "breast/chest feeding."</li>
+            <li><strong>Honest about limits.</strong> "I cannot make your body magically do what you want!"</li>
+            <li><strong>Evidence with warmth.</strong> Facts and efficacy numbers, delivered like a friend would.</li>
+            <li><strong>Plain punctuation.</strong> Short sentences. Commas and periods; no em dashes.</li>
+          </ul>
+        </div>
+        <div class="rounded-3xl p-8 bg-blush">
+          <p class="text-sm font-display font-semibold text-berry uppercase tracking-wide">Signature passage</p>
+          <div class="accent text-plum mt-4 space-y-3" style="font-size:1.15rem; line-height:1.5">
+            <p>You are welcome here if you align with the divine feminine.</p>
+            <p>You are welcome here if you are masculine of centre.</p>
+            <p>You are welcome here if you are non-binary.</p>
+            <p>You are welcome if you are gender expansive, or if your gender expression is often in flux.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 09 ASSETS ===== -->
+    <section id="assets" class="bg-plum">
+      <div class="max-w-content mx-auto px-5 py-20">
+        <p class="eyebrow" style="color:#f4c79a"><span class="secnum not-italic mr-2">09</span> Assets</p>
+        <h2 class="text-3xl md:text-4xl font-semibold mt-3" style="color:#fbf6ef">Files &amp; where they live</h2>
+        <div class="grid md:grid-cols-2 gap-x-12 gap-y-3 mt-10 text-[.95rem]" style="color:rgba(251,246,239,.85)">
+          <p><strong style="color:#fbf6ef">Wordmark</strong> · <a class="underline" href="assets/logo.jpg">logo.jpg</a></p>
+          <p><strong style="color:#fbf6ef">Ring mark / favicons</strong> · <a class="underline" href="assets/favicon-192.png">favicon-192.png</a>, favicon.ico, apple-touch-icon.png</p>
+          <p><strong style="color:#fbf6ef">Social share card</strong> · <a class="underline" href="assets/og-image.jpg">og-image.jpg</a> (1200×630)</p>
+          <p><strong style="color:#fbf6ef">AFAP credential badge</strong> · <a class="underline" href="assets/badge-afap.png">badge-afap.png</a></p>
+          <p><strong style="color:#fbf6ef">Portraits</strong> · laura-hero.jpg, laura-2.jpg, laura-3.jpg, laura-workshops.jpg</p>
+          <p><strong style="color:#fbf6ef">Watercolors</strong> · blooming-women, butterfly, meditation, expecting, orange, tomato</p>
+          <p><strong style="color:#fbf6ef">Website source</strong> · github.com/izzydoesizzy/bodywise (v4/)</p>
+          <p><strong style="color:#fbf6ef">Share-card source</strong> · v4/og-source.html (editable, re-renderable)</p>
+        </div>
+        <div class="mt-12 rounded-3xl overflow-hidden max-w-xl border" style="border-color:rgba(251,246,239,.2)">
+          <img src="assets/og-image.jpg" alt="Bodywise social share card" class="w-full">
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-line">
+      <div class="max-w-content mx-auto px-5 py-10 flex flex-col sm:flex-row justify-between gap-3 text-sm text-muted">
+        <p>Bodywise Brand Guidelines · v1.0 · July 2026</p>
+        <p><a href="../v4/" class="underline">View the live site</a></p>
+      </div>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast">Copied!</div>
+
+  <script>
+    // cycle rings
+    function ring(el, N, s1, s2) {
+      const w = el.getBoundingClientRect().width || parseInt(el.style.width);
+      const C = w / 2, R = w / 2 - Math.max(s1, s2) / 2;
+      for (let i = 0; i < N; i++) {
+        const a = (i / N) * Math.PI * 2 - Math.PI / 2, big = i % 2 === 0, s = big ? s1 : s2;
+        const d = document.createElement('span');
+        d.style.width = d.style.height = s + 'px';
+        d.style.left = (C + R * Math.cos(a) - s / 2) + 'px';
+        d.style.top = (C + R * Math.sin(a) - s / 2) + 'px';
+        d.style.background = big ? '#e2913f' : '#d10a6b';
+        el.appendChild(d);
+      }
+    }
+    function whitering(el, N, s1, s2) {
+      const w = el.getBoundingClientRect().width || parseInt(el.style.width);
+      const C = w / 2, R = w / 2 - Math.max(s1, s2) / 2;
+      for (let i = 0; i < N; i++) {
+        const a = (i / N) * Math.PI * 2 - Math.PI / 2, big = i % 2 === 0, s = big ? s1 : s2;
+        const d = document.createElement('span');
+        d.style.width = d.style.height = s + 'px';
+        d.style.left = (C + R * Math.cos(a) - s / 2) + 'px';
+        d.style.top = (C + R * Math.sin(a) - s / 2) + 'px';
+        d.style.background = '#fff';
+        el.appendChild(d);
+      }
+    }
+    ring(document.getElementById('nav-ring'), 16, 5, 3.5);
+    ring(document.getElementById('mark-ring'), 16, 14, 9);
+    ring(document.getElementById('cover-ring'), 26, 30, 18);
+    ring(document.getElementById('m-ring1'), 16, 11, 7);
+    ring(document.getElementById('m-ring2'), 16, 8, 5);
+    whitering(document.getElementById('berry-ring'), 16, 9, 6);
+    (function(){ // dark ring: orange + peach for contrast on plum
+      const el = document.getElementById('dark-ring'), N=16, w=52, C=26, R=21;
+      for (let i=0;i<N;i++){ const a=(i/N)*Math.PI*2-Math.PI/2, big=i%2===0, s=big?8:5.5;
+        const d=document.createElement('span');
+        d.style.width=d.style.height=s+'px';
+        d.style.left=(C+R*Math.cos(a)-s/2)+'px'; d.style.top=(C+R*Math.sin(a)-s/2)+'px';
+        d.style.background=big?'#e2913f':'#f4c79a'; el.appendChild(d); }
+    })();
+    // copy hex
+    const toast = document.getElementById('toast');
+    document.querySelectorAll('.swatch').forEach(s => s.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(s.dataset.hex); } catch {}
+      toast.textContent = s.dataset.hex.toUpperCase() + ' copied';
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 1400);
+    }));
+  </script>
+</body>
+</html>
